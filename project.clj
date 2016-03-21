@@ -27,8 +27,12 @@
   :hooks [leiningen.cljsbuild]
   :cljsbuild {:builds [{:source-paths ["src/main/clojurescript"]
                         :jar true
-                        :compiler {:output-to "resources/public/js/examples.js"
-                                   :optimizations :advanced}}]}
+                        :compiler {:main "clara.examples"
+                                   :output-to "resources/public/js/examples.js"
+                                   :output-dir "resources/public/js/out"
+                                   :asset-path "js/out"
+                                   :optimizations :none
+                                   :cache-analysis false}}]}
 
   ;; Austin for the ClojureScript REPL.
   :profiles {:dev {:plugins [[com.cemerick/austin "0.1.6"]]}}

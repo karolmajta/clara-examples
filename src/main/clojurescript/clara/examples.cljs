@@ -2,4 +2,7 @@
   (:require [clara.examples.shopping :as shopping]))
 
 ;; Run the shopping examples.
-(shopping/run-examples)
+(defn ^:export -main
+  []
+  (enable-console-print!)
+  (shopping/run-examples))
